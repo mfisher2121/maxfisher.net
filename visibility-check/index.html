@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free 2-Minute Visibility Check | Max Fisher</title>
+  <meta name="description" content="See how your Montgomery County dental practice appears when a new patient searches for a dentist nearby, on Google Maps and ChatGPT Search.">
+  <link rel="canonical" href="https://maxfisher.net/visibility-check/">
+  <link rel="stylesheet" href="/visibility-check/style.css">
+  <script src="/visibility-check/form.js" defer></script>
+</head>
+<body>
+  <header class="shell top"><a href="/">Max Fisher</a><span>Montgomery County, Maryland</span></header>
+  <main class="shell layout">
+    <section class="intro" aria-labelledby="title">
+      <p class="label">For Montgomery County dental practices</p>
+      <h1 id="title">Would a new patient find your practice?</h1>
+      <p class="lede">Get a free 2-Minute Visibility Check for one office in your town.</p>
+      <ul>
+        <li>See where your office appears in a sampled Google Maps search.</li>
+        <li>See whether a sampled ChatGPT Search answer names it.</li>
+        <li>Get one next step based on what the check finds.</li>
+      </ul>
+      <p class="note">The request takes about two minutes. I review the results before sending your check.</p>
+    </section>
+    <section class="card" aria-labelledby="form-title">
+      <p class="label">One office · One local search</p>
+      <h2 id="form-title">Request your free check</h2>
+      <form id="visibility-form" action="/api/visibility-check" method="post">
+        <label for="practice">Practice website or Google Maps link</label>
+        <input id="practice" name="practice" type="url" autocomplete="url" placeholder="https://" required maxlength="500">
+        <label for="town">Office town or ZIP code</label>
+        <input id="town" name="town" type="text" autocomplete="off" required maxlength="60">
+        <label for="email">Email for your report</label>
+        <input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+        <div hidden><label for="website-confirmation">Leave empty</label><input id="website-confirmation" name="websiteConfirmation" tabindex="-1" autocomplete="off"></div>
+        <p class="note">Your details will be used to review your practice and send the check you requested.</p>
+        <button type="submit" id="submit-check" disabled>Get my free visibility check <span aria-hidden="true">↗</span></button>
+        <noscript><p class="note">Enable JavaScript to submit this form.</p></noscript>
+      </form>
+      <p id="form-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>
