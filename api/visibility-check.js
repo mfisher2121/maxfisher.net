@@ -20,7 +20,7 @@ export function normalizeRequest(input) {
   try { url = new URL(practice); } catch { return null; }
   if (!['https:', 'http:'].includes(url.protocol) || !url.hostname.includes('.') ||
       url.username || url.password || url.href.length > 500) return null;
-  const source = ['youtube', 'homepage'].includes(input.source) ? input.source : 'direct';
+  const source = ['youtube', 'homepage', 'rockville-hvac'].includes(input.source) ? input.source : 'direct';
   return { requestId, practice: url.href, town, email, source };
 }
 
